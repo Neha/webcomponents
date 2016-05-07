@@ -1,0 +1,71 @@
+<template id="jobList">
+	<style>
+	:host{
+		font-family: arial;
+		font-size: 14px;
+
+	}
+	.wrapper{
+		max-width:450px;
+		background:#eee;
+		border:1px solid #ccc;
+		padding:10px;
+		margin-bottom:10px;
+		min-height: 380px;
+		margin-left:5px;
+	}
+	.header{
+		border-bottom:1px solid #fff;
+		text-align: center;
+		padding-bottom:10px;
+	}
+
+	</style>
+	<section class="wrapper">
+		<header class="header">
+			
+			<content select="h2"></content>
+		</header>
+		<section class="content">
+			<div class="head">
+				<h2>Job Details</h2>
+				<ul>
+					<li><content select=".exp">3-4 </content> Years Exp</li>
+					<li>HTML5/CSS3/JS Knowledge </li>
+					<li>Well versed with UI tools</li>
+					<li><content select=".req">Debugging skills</content></li>
+				</ul>
+			</div>
+			<div class="head">
+				<h2>Education</h2>
+				<ul>
+					<li>Graduated in IT</li>
+					<li>60% Score</li>
+					<li>Good Communication Skills</li>
+				</ul>
+			</div>
+		</section>
+		<footer>
+				email your resume at 
+				<content select="span"></content>
+			
+		</footer>
+	</section>
+</template>
+<script>
+	var jobList = Object.create(HTMLElement.prototype);
+
+
+		jobList.createdCallback = function(){
+			var root = this.createShadowRoot(),
+		        link = document.querySelector('link[rel="import"]'),
+		        content = link.import.querySelector('#jobList'),
+		        clone = document.importNode(content.content, true);
+		     
+    root.appendChild(clone);
+		}
+
+		var panelComp = document.registerElement('job-list',{
+    		prototype : jobList
+		});
+</script>

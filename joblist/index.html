@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Web components</title>
+  <link rel="import" href="resources/components/job-list.html" />
+   <link rel="stylesheet" type="text/css" href="resources/style.css" />
+   <style>
+   .content{
+   	display: flex;
+   }
+   h3{
+   	text-align: center;
+   	font-family: arial;
+   	font-size:32px;
+   	margin:20px 0;
+   }
+
+   </style>
+</head>
+<body>
+	<section id="container">
+		<header>
+			<h1>Web Components demo for JSLovers</h1>
+		</header>
+
+		<h3>Openings for UI Developers</h3>
+		<section class="content">
+			
+			<job-list>
+					<h2>FACEBOOK India</h2>
+					<span class="exp">10-9</span>
+					<div class="req">Social Network lover</div>
+					<span>contact@facebook.com</span>
+			</job-list>
+
+            
+			<job-list>
+					<h2>Microsoft India</h2>
+					<span class="exp">2-9</span>
+					<div class="req">IE Lover</div>
+					<div class="req">Debugging</div>
+					<span>contact@microsoft.com</span>
+			</job-list>
+
+			<!-- Second WC for FF -->
+			<job-list>
+					<h2>Firefox India</h2>
+					<span>contact@ff.com</span>
+			</job-list>
+
+			
+
+		</section>
+	</section>
+</body>
+</html>
